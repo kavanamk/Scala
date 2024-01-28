@@ -1,0 +1,73 @@
+
+  // Define the function to print each integer in the list
+  def printIntegers(xs: List[Int]): Unit = {
+    xs.foreach(println)
+  }
+
+def squareList(xs: List[Int]): List[Int] = {
+    xs.map(x => x * x)
+  }
+
+def findFirstGreaterThanOrEqual5(xs: List[Int]): Option[Int] = {
+  xs.find(element => element >= 5)
+}
+
+def countGreaterThanEqual5(xs: List[Int]): Int = {
+  xs.count(_ >= 5)
+}
+
+  def hasIntegersGreaterThanOrEqual5(xs: List[Int]): Boolean = {
+    xs.exists(element => element >= 5)
+  }
+
+object ListFunctions {
+  def areAllIntegersGreaterThanOrEqual5(xs: List[Int]): Boolean = {
+    xs.forall(element => element >= 5)
+  }
+
+for x <- List (1, 2, 3, 4) do println (x)
+
+val result = for x <- List (1, 2, 3, 4) do println (x) //wrong 
+
+val result = for x <- List (1, 2, 3, 4) yield x
+
+val result = for x <- List (1, 2, 3, 4) yield 2 * x
+
+val result = for x <- List (1, 2, 3, 4) yield s"${x} potato"
+
+val result = for x <- List (1, 2, 3, 4) yield List (2 * x)
+
+
+//flatten list
+val result = for xs <- List (List (1, 2, 3, 4), List (5, 6, 7), List (8), List ())
+		  x <- xs 
+	     yield x
+
+def cons [X] (x:X, xs:List[X]) : List[X] = x::xs
+
+def append [X] (xs:List[X], ys:List[X]) : List[X] = xs:::ys
+
+def map [X,Y] (xs:List[X], f:X=>Y) : List[Y] = {
+  xs match {
+    case Nil   => Nil
+    case y::ys => f(y) :: map(ys, f)
+  }
+}
+
+def filter [X] (xs:List[X], f:X=>Boolean) : List[X] = {
+  xs match {
+    case Nil            => Nil
+    case y::ys if f (y) => y :: filter (ys, f)
+    case _::ys          => filter (ys, f)
+  }
+}
+
+def exists [X] (xs:List[X], p:X=>Boolean) : Boolean = {
+  xs match {
+    case Nil       => false
+    case (x :: xs) => p (x) || exists (xs, p)
+  }
+}
+
+def flatten [X] (xss:List[List[X]]) : List[X] = for xs <- xss; x <- xs yield x
+
