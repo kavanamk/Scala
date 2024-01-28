@@ -1,0 +1,80 @@
+val fruits = List("abc","xyz")
+val nums = List(1,2,3)
+val empty= List()
+val matrix2D=List(
+List(1,2),
+List(3,4)
+)
+
+Lists are homogeneous
+
+val fruits: List[String] = List("abc","xyz")
+val nums: List[Int] = List(1,2,3)
+val empty: List[Nothing] = List()
+val matrix2D: List[List[Int]] =List(
+List(1,2),
+List(3,4)
+)
+
+Constructing lists
+
+val fruit = "apple" :: ("oranges" ::("pears :: Nil))
+val nums = 1 ::(2 ::(3 ::(4 :: Nil)))
+val empty = Nil
+val mat = (1 ::(0 ::(0 ::nil))) ::
+          (1 ::(0 ::(0 ::nil))) ::
+          (1 ::(0 ::(0 ::nil))) :: Nil
+val nums= 1 :: 2 :: 3 :: 4 :: Nil
+
+Basic operations
+
+head = returns first element
+tail= returnts all elemets except first
+isEmpty = checks if emoty
+
+empty.isEmpty => true
+
+Concatenate 
+
+List(1,2) ::: List(3,4)
+xs ::: (ys ::: zs)
+
+def append(xs: List[T], ys:List[T]):List[T]=
+  xs match
+    case xs.isEmpty => ys
+    case head :: tail => head :: append(tail, ys)
+
+List(1,2,3).length //3
+
+nums.last //4
+nums.init //List(1,2,3)
+nums.reverse //List(4,3,2,1)
+
+
+def rev[T](xs:List[T])=
+  xs match
+    case xs.isEmpty => xs
+    case head :: tail => rev(tail) :: List(head)
+
+Split
+
+xs.splitAt(n) => (xs.taken(n),xs.drop(n))
+abcde.appply(2) //c
+
+matrix2D.flatten //1,2,3,4
+abcde.toString //List(a,b,c,d,e)
+xs.mkString(sep) // xs.sep
+val arr = abcde.toArray()
+
+
+
+
+
+
+
+
+
+
+
+
+
