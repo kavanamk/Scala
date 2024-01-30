@@ -1,1 +1,47 @@
+var filename="default.text"
+if !args.isEmpty then
+  filename=ards(0)
+
+def gcd(x:Int,y:Int):Int=
+  var a=x
+  var b=y
+  while a!=0 do:
+    val temp = a
+    a= b%a
+    b=temp
+ b
+
+def greet() = println("hi")
+
+for i <- 1 to 4 do
+  println("hi")
+
+for file <- fileHere do:
+  //something
+
+throw new IllegalArgumentExpression
+
+def div(x:Int, y:Int):Int=
+  if y==0 then 
+    throw new RunTimeException("cant be zero")
+  else
+    x/y
+
+try
+  println(file.read())
+finally
+  file.close()
+
+try new URL(path)
+catch case e: MalformedURLException=>new URL("https..")
+
+MATCH EXPRESSION //kinda like switch case
+
+x match
+  case "salt"=>println("pepper")
+  case "chips"=>println("salsa")
+  case _=>println("huh?")
+
+
+
 
