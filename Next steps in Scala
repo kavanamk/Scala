@@ -1,0 +1,80 @@
+ARRAYS AND LISTS
+
+val big = new java.math.BigInteger("12345")
+val greetStrings = new Array[String](3)
+greetStrings(0) = "hello"
+greetStrings(1)= ","
+greetStrings(2) = " world!"
+
+for i<- 0 to 2 do
+  println(greetString(i))
+
+greetString.update(0, "Hello")
+
+val num - Array("one", "two", "three")
+val nums = List(1,2,3)
+
+val greetString: Array[String]=new Array[String](3)
+greetStrings.update(0, "hello")
+greetStrings.update(1, ",")
+greetStrings.update(2, " world!")
+for i<- 0 to 2 do
+  println(greetString.apply(i))
+
+val one =List(1,2)
+val two = List(3,4)
+val three = one ::: two
+
+greetString.empty
+greetString(2)
+greetString.count(s =>s.length==4)
+greetString.drop(2) //without 1st 2 elements
+greetString.foreach(s=>print(s))
+greetString.head //first element
+greetString.tail // all elemnts except 1st
+greetString.isEmpty
+greetString.length
+greetString.map(s=>s+"y") //adds y at end to all elements
+greetString.reverse
+greetString.fildertNot(s=>s.length==4)
+val myList = List("apple", "orange", "banana")
+val resultString = myList.mkString(", ")
+println(resultString)// apple,orange,banana
+
+
+TUPLES //immutable
+
+val pair = (99,"luffy")
+val num= pair(0)
+val ex = pair(1)
+
+SETS AND MAPS
+
+val jetSet = Set("jet", "life")
+val query = jetSet.contains("shiraz")
+
+val hashset = HashSet("tomatoes","chillies")
+val ingridents = hashset + "coriander"
+
+val treasureMap = mutable.Map.empty[Int,String]
+treasureMap +=(1 -> "go to island")
+treasureMap +=(2-> "find the tree")
+treasureMap +=(3->"dig")
+val romanNumeral = Map(1->"I",  2->"II", 3->"III")
+
+
+MAP AND YIELD
+
+val adj = List("one","two","three")
+val nouns = adj.map(x=>x+" fish")
+//another way
+for a<-adj yeild
+  a+" fish"
+
+VECTOR  
+
+val vec = Vector("a","b","c")
+val usingMap=vec.map(x=>x.toUpperCase+"?")
+
+
+
