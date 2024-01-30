@@ -1,0 +1,39 @@
+class CheckSumAccumulator:
+  private var sum=0
+  def add(b: Byte):Unit=
+    sum += b
+  def checkSum():Int=
+    return ~(sum & 0xFF) +1
+
+val acc = new CheckSumAccumulator
+acc.sum=3 //wont compile coz private
+
+using another method:
+class CheckSumAccumulator:
+  private var sum=0
+  def add(b: Byte):Unit= sum+=b
+  def CheckSum():Int = ~(sum & 0xFF) +1
+
+SEMICOLON INFERANCE
+
+val s= "hi";println(s)
+if x<2 then
+  println()
+else
+ "ok"
+
+SINGLETON OBJECT //keyword 'object' instead of class
+
+CASE CLASSES
+
+case class Person(name:String, age:Int)
+val p = Person("kav",24)
+p.name
+p.age
+p.toString() //Person(kav,24)
+p.hashCode ==Person("kav",24).hashCode
+
+case class Person(name:String, age:Int):
+  def appendtoname(suffix:String):Person=
+     Person(s"$name$suffix",age)
+
