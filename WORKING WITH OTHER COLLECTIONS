@@ -1,0 +1,68 @@
+val colors = List(a,b,c)
+colours.head //a
+colors.tail //b,c
+
+ARRAYS
+
+val fiveInts =new Array[Int](5)
+val fivetoone = Array(1,2,3,4,5)
+
+LIST/ARRAY BUFFERS
+
+val buf = new ListBufferInt[Int]
+buf+=1
+buf.toList()
+
+val buf = new ArrayBufferInt[Int]
+buf +=12
+buf.length
+
+SETS AND MAPS
+
+//create a set
+val wordsArr = (see,spot,run)
+val wordSet = mutable.set.empty[String]
+for word <- wordsArr do
+  words += word.toLoweCase
+
+val nums = Set(1,2,3)
+nums +5 //addds an element to nums
+nums - 3 //removes 3
+nums ++ List(4,5)
+nums -- List(1,4)
+nums.size
+nums.contains(3)
+nums+=3
+words-="see"
+words++=(do, re)
+words --=List("spot","run")
+words.clear()
+
+//create a map
+val map = mutable.Map.empty[String]
+map("hello")=1
+map("there")=2
+
+val nums = Map("i"-> 1, "ii"->2)
+nums+("iii"->3)
+nums-"ii"
+nums.size
+nums("ii")
+nums.keys
+nums.keySet  //returns key as a set
+num.values
+nums.isEmpty
+
+
+CONVERT TO ARRAY or TO LIST
+
+tree.toList
+tree.toArray
+
+TUPLES
+
+val tup = (1,"hello", 4.0)
+
+
+
+
